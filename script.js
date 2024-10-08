@@ -1,4 +1,3 @@
-
 const addTaskInput = document.querySelector("#addTask");
 const addBtn = document.querySelector("#addBtn");
 const list = document.querySelector("ul");
@@ -26,13 +25,10 @@ addBtn.addEventListener("click", function () {
     liElement.innerText = addTask.value;
     list.appendChild(liElement);
 
-
-    //create a remove-button with an img inside.
-    const removeTaskBtn = document.createElement("button");
-    const removeTaskImg = document.createElement("img");
-    removeTaskImg.src = "trashcan.png";
-    list.appendChild(removeTaskBtn);
-    removeTaskBtn.appendChild(removeTaskImg);
+    const trashcan = document.createElement("span");
+    trashcan.setAttribute("class", "trashcan");
+    trashcan.innerHTML = "&#128465;";
+    liElement.appendChild(trashcan);
 
     addTask.value = "";
 
@@ -50,18 +46,9 @@ addBtn.addEventListener("click", function () {
 
     });
 
-    removeTaskBtn.addEventListener("click", function () {
-
-        const taskArrayElement = taskArray.indexOf(liElement.innerText);
-        
-        //if it returns >=0, it means that the element exists in the array and matches the liElement-text. -1 means that it does not exist. 
-        if (taskArrayElement >= 0) {     
-            // 1 means delete only one element. 2 means delete that element and the element after.
-            taskArray.splice(taskArrayElement, 1);
-        }
+    trashcan.addEventListener("click", function () {
 
         liElement.remove();
-        removeTaskBtn.remove();
     });
 });
 
