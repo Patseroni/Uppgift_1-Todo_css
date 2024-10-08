@@ -6,7 +6,7 @@ const nrOfcompleted = document.querySelector("#nrOfCompleted p");
 const taskArray = [];
 let counter = 0;
 
-
+nrOfcompleted.textContent = `${counter} completed`;
 
 addBtn.addEventListener("click", function () {
 
@@ -18,12 +18,17 @@ addBtn.addEventListener("click", function () {
         return;
     }
 
-    taskArray.push(addTaskInput.value);
-
-    //create an li and add to the ul.
+    //Separating the li and trashcan by placing the text in one span and the trashcan in another.
+    //create an li and add to the ul and span.
     const liElement = document.createElement("li");
-    liElement.innerText = addTask.value;
+    const textSpan = document.createElement("span");
+    textSpan.setAttribute("class", "textSpan");
+    
     list.appendChild(liElement);
+    liElement.appendChild(textSpan);
+
+    textSpan.innerText = addTask.value;
+    
 
     const trashcan = document.createElement("span");
     trashcan.setAttribute("class", "trashcan");
@@ -32,22 +37,22 @@ addBtn.addEventListener("click", function () {
 
     addTask.value = "";
 
-    liElement.addEventListener("click", function () {
+    textSpan.addEventListener("click", function () {
 
-        if (liElement.getAttribute("class") == "completed") {
-            liElement.setAttribute("class", "");
+        if (textSpan.getAttribute("class") == "completed") {
+            textSpan.setAttribute("class", "");
             counter--;
         }
         else {
-            liElement.setAttribute("class", "completed");
+            textSpan.setAttribute("class", "completed");
             counter++;
         }
-        nrOfcompleted.textContent = `Completed tasks: ${counter}`;
+        nrOfcompleted.textContent = `${counter} completed`;
 
     });
 
     trashcan.addEventListener("click", function () {
-
+        
         liElement.remove();
     });
 });
