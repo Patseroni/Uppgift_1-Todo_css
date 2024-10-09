@@ -16,10 +16,10 @@ body {
 .topBox {
     margin: 0 auto;
     background-color:#fff; 
-    width: 700px;
+    width: 650px;
     margin-top: 15px;
-    /* box-shadow: 4px 4px #000; */
-    
+    box-shadow: 0px 0px 20px -8px #200;
+
 }
 
 h1 {
@@ -32,10 +32,12 @@ h1 {
 
 
 input {
-    width:250px;
+    width:270px;
     padding-left: 20px;
     font-size: 25px;
     margin-right:10px;
+    border: 1px solid #999;
+    border-radius: 4px;
 }
 
 #inputAndBtnDiv {
@@ -43,13 +45,29 @@ input {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
-    height: 40px;
+    height: 45px;
 
 }
 
 #addBtn {
-    width: 60px;
+    width: 70px;
     font-size: 25px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+#addBtn:hover{
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+#infoBox {
+    margin: 20px auto;
+    width: 400px;
+    height: 30px;
+    text-align: center;
+    color: #a00;
+    
 }
 
 #listAndBtnDiv { 
@@ -58,42 +76,53 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    padding-bottom: 20px;
 
 }
 
 .trashcan{
-    margin-left: 10px;
-    display: inline-block;
     margin-left: 20px;
-    font-size: 20px;
-    opacity:50%;
+    font-size: 18px;
+    opacity: 50%;
+    margin-top: 10px;
 }
 
-.trashcan:hover, #addBtn:hover{
+.trashcan:hover{
     cursor: pointer;
     opacity:100%;
     transition: 1s;
 }
 
-li{
-    font-size: 30px;
+li{   
+    font-size: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
     /* background-color: #27079b; */
     list-style: none;
-    margin-bottom:10px;
+    margin-bottom:18px;
 }
 
-.textSpan {
+.textSpan{
+    font-size: 35px;
+}
+
+.textSpan:hover{
+    text-decoration:line-through;
+    cursor: pointer;
+    transition:0.5s;
+}
+
+.completed {
+    font-size: 35px;
+    text-decoration:line-through;
+    color: #666;
+    transition:0.5s;
     
 }
 
-
-.completed {
-    list-style: none;
-    text-decoration: line-through;
-    color: #666;
+.completed:hover{
+    cursor: pointer;
 }
 
 #removeTaskDiv {
@@ -109,25 +138,13 @@ li{
     height:40px;
 }
 
-.liSpan{
-
-}
-
-#infoBox {
-    margin: 20px auto;
-    width: 400px;
-    height: 30px;
-    text-align: center;
-    color: #a00;
-    
-}
-
 #nrOfCompleted{
     /* background-color: #a00; */
-    font-size: 18px;
+    font-size: 20px;
     height: 60px;
     margin: auto;
     text-align: center;
     line-height: 60px;
+    margin-bottom:20px;
 }
 

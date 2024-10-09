@@ -14,7 +14,7 @@ addBtn.addEventListener("click", function () {
         infoBox.innerText = "";
     }
     else {
-        infoBox.innerText = "You have to type something";
+        infoBox.innerText = "Input must not be empty";
         return;
     }
 
@@ -40,7 +40,7 @@ addBtn.addEventListener("click", function () {
     textSpan.addEventListener("click", function () {
 
         if (textSpan.getAttribute("class") == "completed") {
-            textSpan.setAttribute("class", "");
+            textSpan.setAttribute("class", "textSpan");
             counter--;
         }
         else {
