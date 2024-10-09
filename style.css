@@ -1,9 +1,17 @@
- 
-
-* {
+ * {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+@keyframes topBoxSlide{
+    from{
+        transform: translateY(-400px);
+    }
+    to{
+        transform: translateY(0);
+    }
+    
 }
 
 body {
@@ -18,12 +26,13 @@ body {
     background-color:#fff; 
     width: 650px;
     margin-top: 15px;
-    box-shadow: 0px 0px 20px -8px #200;
+    box-shadow: 0px 0px 20px -10px #000;
 
+    animation-name: topBoxSlide;
+    animation-duration: 1s;
 }
 
 h1 {
-    /* background-color: #579; */
     font-size: 4em;
     text-align: center;
     font-family:'Times New Roman', Times, serif;
@@ -41,10 +50,8 @@ input {
 }
 
 #inputAndBtnDiv {
-    /* background-color: #aea; */
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
     height: 45px;
 
 }
@@ -67,11 +74,9 @@ input {
     height: 30px;
     text-align: center;
     color: #a00;
-    
 }
 
 #listAndBtnDiv { 
-    /* background-color:rgb(194, 136, 60); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,7 +103,6 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #27079b; */
     list-style: none;
     margin-bottom:18px;
 }
@@ -139,7 +143,6 @@ li{
 }
 
 #nrOfCompleted{
-    /* background-color: #a00; */
     font-size: 20px;
     height: 60px;
     margin: auto;
