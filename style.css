@@ -3,13 +3,7 @@
     margin: 0;
     padding: 0;
 }
- 
-body {
-    background: linear-gradient(to bottom, rgb(250, 190, 190), rgb(250, 120, 120));
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 98.5vh; 
-}
+
 
 @keyframes topBoxSlide{
     from{
@@ -26,9 +20,33 @@ body {
 }
 
 @keyframes fadeIn{
+    from{
+        opacity:0;
+    }
     to{
         opacity: 1;
     }
+}
+
+@keyframes info-fadeIn{
+    0%{
+        opacity:0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+body {
+    background: linear-gradient(to bottom, rgb(250, 190, 190), rgb(250, 120, 120));
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 98.5vh; 
 }
 
 .topBox { 
@@ -43,16 +61,15 @@ body {
 }
 
 h1 {
-    opacity: 0;
     font-size: 4em;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     padding-top: 20px;
 
-    opacity: 0;
+    opacity:0;
     animation-name: fadeIn;
     animation-duration: 500ms;
-    animation-delay: 850ms;
+    animation-delay: 800ms;
     animation-fill-mode: forwards;
 }
 
@@ -67,36 +84,30 @@ h1 {
     opacity: 0;
     animation-name: fadeIn;
     animation-duration: 500ms;
-    animation-delay: 1000ms;
+    animation-delay: 900ms;
     animation-fill-mode: forwards;
 }
 
-input {
-    
+#inputAndBtnDiv { 
+    display: flex;
+    justify-content: center;
+    height: 45px;
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards;
+
+}
+
+input {  
     width:270px;
     padding-left: 20px;
     font-size: 25px;
     margin-right:10px;
     border: 1px solid #999;
     border-radius: 4px;
-
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 500ms;
-    animation-delay: 1000ms;
-    animation-fill-mode: forwards;
-}
-
-#inputAndBtnDiv {
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    height: 45px;
-    animation-name: fadeIn;
-    animation-duration: 500ms;
-    animation-delay: 1200ms;
-    animation-fill-mode: forwards;
-
 }
 
 #addBtn {
@@ -116,6 +127,14 @@ input {
     width: 400px;
     text-align: center;
     color: #a00;
+}
+
+#info_animate{
+    opacity:0;
+    animation-name: info-fadeIn;
+    animation-duration: 2000ms;
+    animation-timing-function:ease;
+    animation-iteration-count: 3;
 }
 
 #listAndBtnDiv { 

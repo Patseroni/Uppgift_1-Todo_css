@@ -5,7 +5,7 @@ const infoBox = document.querySelector("strong");
 const nrOfcompleted = document.querySelector("#nrOfCompleted p");
 const taskArray = [];
 let counter = 0;
-
+infoBox.setAttribute("id", "");
 
 
 nrOfcompleted.textContent = `${counter} completed`;
@@ -17,6 +17,7 @@ addBtn.addEventListener("click", function () {
     }
     else {
         infoBox.innerText = "Input must not be empty";
+        infoBox.setAttribute("id", "info_animate");
         return;
     }
 
