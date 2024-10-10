@@ -6,6 +6,8 @@ const nrOfcompleted = document.querySelector("#nrOfCompleted p");
 const taskArray = [];
 let counter = 0;
 
+
+
 nrOfcompleted.textContent = `${counter} completed`;
 
 addBtn.addEventListener("click", function () {

@@ -3,17 +3,7 @@
     margin: 0;
     padding: 0;
 }
-
-@keyframes topBoxSlide{
-    from{
-        transform: translateY(-400px);
-    }
-    to{
-        transform: translateY(0);
-    }
-    
-}
-
+ 
 body {
     background: linear-gradient(to bottom, rgb(250, 190, 190), rgb(250, 120, 120));
     background-size: cover;
@@ -21,7 +11,27 @@ body {
     height: 98.5vh; 
 }
 
-.topBox {
+@keyframes topBoxSlide{
+    from{
+        transform: translateY(-330px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(60px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }  
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+
+.topBox { 
     margin: 0 auto;
     background-color:#fff; 
     width: 650px;
@@ -29,30 +39,63 @@ body {
     box-shadow: 0px 0px 20px -10px #000;
 
     animation-name: topBoxSlide;
-    animation-duration: 1s;
+    animation-duration: 850ms;
 }
 
 h1 {
+    opacity: 0;
     font-size: 4em;
     text-align: center;
-    font-family:'Times New Roman', Times, serif;
-    padding-top:20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 20px;
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-delay: 850ms;
+    animation-fill-mode: forwards;
 }
 
+#nrOfCompleted{
+    font-size: 20px;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom:20px;
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards;
+}
 
 input {
+    
     width:270px;
     padding-left: 20px;
     font-size: 25px;
     margin-right:10px;
     border: 1px solid #999;
     border-radius: 4px;
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards;
 }
 
 #inputAndBtnDiv {
+    opacity: 0;
     display: flex;
     justify-content: center;
     height: 45px;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-delay: 1200ms;
+    animation-fill-mode: forwards;
 
 }
 
@@ -71,7 +114,6 @@ input {
 #infoBox {
     margin: 20px auto;
     width: 400px;
-    height: 30px;
     text-align: center;
     color: #a00;
 }
@@ -142,12 +184,5 @@ li{
     height:40px;
 }
 
-#nrOfCompleted{
-    font-size: 20px;
-    height: 60px;
-    margin: auto;
-    text-align: center;
-    line-height: 60px;
-    margin-bottom:20px;
-}
+
 
