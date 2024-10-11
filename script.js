@@ -5,7 +5,7 @@ const infoBox = document.querySelector("strong");
 const nrOfcompleted = document.querySelector("#nrOfCompleted p");
 const taskArray = [];
 let counter = 0;
-
+addTask.value = "";
 
 nrOfcompleted.textContent = `${counter} completed`;
 
