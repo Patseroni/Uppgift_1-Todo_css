@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 @keyframes topBoxSlide{
     from{
         transform: translateY(-330px);
@@ -30,17 +29,24 @@
 
 @keyframes info-fadeIn{
     0%{
-        opacity:0;
-    }
-    50%{
         opacity: 1;
     }
-    100%{
+    50%{
         opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 
-
+@keyframes list-animation{
+    from{
+        transform: translateY(30px)
+    }
+    to{
+        transform: translateY(0);
+    }
+}
 
 body {
     background: linear-gradient(to bottom, rgb(250, 190, 190), rgb(250, 120, 120));
@@ -61,7 +67,7 @@ body {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 65px;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
     padding-top: 20px;
@@ -103,8 +109,8 @@ h1 {
 
 input {  
     width:270px;
-    padding-left: 20px;
-    font-size: 25px;
+    padding-left: 5px;
+    font-size: 27px;
     margin-right:10px;
     border: 1px solid #999;
     border-radius: 4px;
@@ -112,29 +118,33 @@ input {
 
 #addBtn {
     width: 70px;
-    font-size: 25px;
+    font-size: 26px;
     border: 1px solid #999;
     border-radius: 4px;
+    padding-bottom: 3px;
 }
 
 #addBtn:hover{
     cursor: pointer;
-    background-color: #ccc;
+    background-color: #ddd;
 }
 
 #infoBox {
-    margin: 20px auto;
+    font-size: 18px;
+    font-style: italic;
+    margin: 10px auto 34px auto;
     width: 400px;
     text-align: center;
-    color: #a00;
+    color: rgb(233, 70, 70);
 }
 
 #info_animate{
     opacity:0;
     animation-name: info-fadeIn;
-    animation-duration: 2000ms;
-    animation-timing-function:ease;
-    animation-iteration-count: 3;
+    animation-duration: 500ms;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;
 }
 
 #listAndBtnDiv { 
@@ -148,15 +158,15 @@ input {
 
 .trashcan{
     margin-left: 20px;
-    font-size: 18px;
-    opacity: 50%;
+    font-size: 20px;
+    opacity: 60%;
     margin-top: 10px;
 }
 
 .trashcan:hover{
     cursor: pointer;
     opacity:100%;
-    transition: 1s;
+    transition: 350ms;
 }
 
 li{   
@@ -166,23 +176,29 @@ li{
     justify-content: center;
     list-style: none;
     margin-bottom:18px;
+
+    animation-name: list-animation;
+    animation-timing-function: ease-out;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
 }
 
 .textSpan{
     font-size: 35px;
+    transition:300ms;
 }
 
 .textSpan:hover{
     text-decoration:line-through;
     cursor: pointer;
-    transition:0.5s;
+    
 }
 
 .completed {
     font-size: 35px;
     text-decoration:line-through;
-    color: #666;
-    transition:0.5s;
+    color: #777;
+    transition:300ms;
     
 }
 
